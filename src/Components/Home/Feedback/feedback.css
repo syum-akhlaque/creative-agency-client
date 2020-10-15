@@ -1,0 +1,12 @@
+.feedback-cards img {
+    height: 64px;
+    width: 64px;
+}
+.feedback-cards {
+    box-shadow: 0px 4px 80px rgba(0, 0, 0, 0.1);
+    border: 1px solid #BFBFBF;
+    box-sizing: border-box;
+    border-radius: 4px;
+    height: 215px;
+    overflow: hidden;
+}

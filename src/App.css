@@ -1,38 +1,23 @@
-.App {
-  text-align: center;
+.bg-darkBlue{
+  background-color: #111430;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.bg-lightBlue{
+  background-color: #C6FFE0;
+  color: #009444;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* If the screen size is 600px wide or less, set the font-size of h1 to 30px */
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 32px !important;
+    margin-top: 10px;
   }
+  .header-container {
+    height: 800px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .header-main div{
+   padding-bottom: 40px;
   }
-  to {
-    transform: rotate(360deg);
+  .client-section img{
+    height: 25px !important;
   }
 }

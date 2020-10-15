@@ -1,0 +1,82 @@
+#serviceList , #clientReview{
+    display: none;
+}
+
+/* --------------------------------- */
+.admin{
+    background-color: #fff;
+}
+.right-side{
+    background-color: #E5E5E5;
+}
+table{
+    background-color: #fff;
+    margin-top: 25px;
+    border-radius: 15px;
+}
+.dlt-icon {
+    cursor: pointer;
+}
+#admin-addEvent-form{
+    display: none;
+}
+.left-sidebar p:hover{
+    cursor: pointer;
+    color: blue;
+}
+/* -------------------------------customer-service css starts --------------------------------- */
+
+.customer-service{
+    background-color: #E5E5E5;
+}
+.left-sidebar{
+    background-color: #fff;
+}
+/* --------------------------------order css starts --------------------------------- */
+.order-form {
+    margin: auto;
+    width: 100%;
+    padding: 10px;
+    background:#fff;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 30px 30px;
+  }
+.order-form input{
+    display: block;
+    margin-top: 20px;
+    padding: 10px 25px;
+    border: 1px solid rgb(255, 222, 251);
+    width: 100%;
+}
+.order-form input:focus{
+   
+}
+.error{
+    color: red;
+}
+ .order-form :focus {
+    outline: -webkit-focus-ring-color auto 0px;
+}
+.order-form ::placeholder { 
+    color: rgb(65, 60, 60) !important;
+  }
+  .order-form input[type=submit]{
+    background: #F9A51A;
+  }
+
+  /* -------------service list  card css --------------*/
+  .serviceList-cards img {
+    height: 64px;
+    width: 64px;
+}
+.serviceList-cards{
+    box-shadow: 0px 4px 80px rgba(0, 0, 0, 0.1);
+    border: 1px solid #BFBFBF;
+    box-sizing: border-box;
+    border-radius: 4px;  
+    background-color: #fff;    
+}
+
+
+
