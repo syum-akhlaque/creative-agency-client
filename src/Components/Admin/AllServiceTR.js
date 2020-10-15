@@ -1,7 +1,7 @@
 import React from 'react';
 
 const AllServiceCards = (props) => {
-    const {name, serviceName, email, projectDetails , orgName} = props.services;
+    const {name, serviceName, email, projectDetails } = props.services;
     return (
         <>
              <tr>

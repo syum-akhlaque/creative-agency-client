@@ -2,30 +2,45 @@ import React, { useContext } from 'react';
 import { userContext } from '../../App';
 import { useForm } from "react-hook-form";
 import './Services.css'
+import { useState } from 'react';
 
 const Order = (props) => {
     const serviceName = props.serviceName;
+    const [file, setFile] = useState({})
+   
 
     const [loggedInUser, setLoggedInUser] = useContext(userContext);
     const { register, handleSubmit, errors } = useForm();
-    const onSubmit = data => { 
-       
-        const order = { //object that will be push in database
-            name    : loggedInUser.name || data.name,
-            serviceName : serviceName || data.serviceName,
-            email   : loggedInUser.email || data.email, 
-            projectDetails : data.projectDetails,
-            img     : 'https://i.postimg.cc/FF01GGhW/service1.png'
-        }
-        const requestOptions = {
+    // ------------------------
+    const handleFileChange = (e) => {
+        const newFile = e.target.files[0];
+        setFile(newFile);
+    }
+
+    const onSubmit = (data) => {
+
+        const formData = new FormData()
+
+        formData.append('file', file);
+        formData.append('name', data.name);
+        formData.append('serviceName', data.serviceName);
+        formData.append('projectDetails', data.projectDetails);
+        formData.append('email', data.email);
+
+        fetch('http://localhost:5000/addOrders', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(order) 
-        };
-        fetch('http://localhost:5000/addOrders', requestOptions); // fetch req to add order
-        // dispaly block service list hare
-    };
-    
+            body: formData
+        })
+            .then(response => response.json())
+            .then(result => {
+                console.log(result)
+            })
+            .catch(error => {
+                console.error(error)
+            })
+    }
+    //--------------------------
+ 
 
     return (
         <div className= 'order-form my-5'>
@@ -44,9 +59,12 @@ const Order = (props) => {
        
                    <input name="price" type="text" defaultValue='$100' placeholder= 'Price'  ref={register({ required: true })} />
                    {errors.price && <span className='error'>Price is required </span>}
+
+                   <input onChange={handleFileChange} type="file" name="file" id="" ref={register({ required: true })}/>
+                   {errors.file && <span className='error'>file is required </span>}
        
        
-                   <input type="submit" value =  'Order' />
+                   <input type="submit" value =  'Order'  />
                </form>  
         </div>
     );

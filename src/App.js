@@ -8,11 +8,10 @@ import {
 } from "react-router-dom";import './App.css';
 import Home from './Components/Home/Home/Home';
 import Login from './Components/Login/Login';
-import Services from './Components/Services/Services';
 import Navbar from './Components/Home/Navbar/Navbar';
-import Admin from './Components/Admin/Admin';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import Dashboard from './Components/Dashboard/Dashboard';
+import Services from './Components/Services/Services';
 export const userContext = createContext();
 
 function App() {
@@ -30,6 +29,10 @@ function App() {
           <Route exact path="/login">
             <Navbar></Navbar>
             <Login/>
+          </Route>
+          <Route exact path="/test">
+            <Navbar></Navbar>
+            <Services></Services>
           </Route>
           <PrivateRoute exact path="/dashboard">
             <Navbar></Navbar>
