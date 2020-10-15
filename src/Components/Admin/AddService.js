@@ -9,7 +9,6 @@ const AddService = () => {
     const [loggedInUser] = useContext(userContext);
     const { register, handleSubmit, errors } = useForm();
 
-    // ------------------------
     const handleFileChange = (e) => {
         const newFile = e.target.files[0];
         setFile(newFile);
@@ -23,7 +22,7 @@ const AddService = () => {
         formData.append('title', data.title);
         formData.append('description', data.description);
 
-        fetch('http://localhost:5000/addServices', {
+        fetch('https:/polar-headland-31811.herokuapp.com/addServices', {
             method: 'POST',
             body: formData
         })
@@ -35,24 +34,7 @@ const AddService = () => {
                 console.error(error)
             })
     }
-    //--------------------------
-
-    // const onSubmit = data => { 
-       
-    //     alert("Ya Hoo !! A New Service Added!")
-    //     const review = { //object that will be push in database
-    //         title    :  data.title,
-    //         description : data.description,
-    //         imgUrl    : 'https://i.postimg.cc/FF01GGhW/service1.png',
-    //     }
-    //     const requestOptions = {
-    //         method: 'POST',
-    //         headers: { 'Content-Type': 'application/json' },
-    //         body: JSON.stringify(review) 
-    //     };
-    //     fetch('http://localhost:5000/addServices', requestOptions)// fetch req to add events
-
-    // };
+   
     return (
         <div className="col-md-5 p-5 ">
             <form onSubmit={handleSubmit(onSubmit)}>

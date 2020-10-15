@@ -28,7 +28,7 @@ const Order = (props) => {
         formData.append('email', data.email);
         formData.append('status', 'pending');
 
-        fetch('http://localhost:5000/addOrders', {
+        fetch('https://polar-headland-31811.herokuapp.com/addOrders', {
             method: 'POST',
             body: formData
         })

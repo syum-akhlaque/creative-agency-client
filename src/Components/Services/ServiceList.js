@@ -13,7 +13,7 @@ const ServiceList = () => {
         }
       }
       useEffect(() => { //retrive all order from mongodb
-        fetch('http://localhost:5000/orders?email='+loggedInUser.email,requestOptions) 
+        fetch('https://polar-headland-31811.herokuapp.com/orders?email='+loggedInUser.email,requestOptions) 
            .then(response => response.json())
            .then(data => setServiceLists(data)); 
      }, [loggedInUser.email,requestOptions]);

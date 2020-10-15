@@ -15,7 +15,7 @@ const Feedback = () => {
         }
       }
     useEffect(() => { //retrive all order from mongodb
-        fetch('http://localhost:5000/reviews',requestOptions) 
+        fetch('https://polar-headland-31811.herokuapp.com/reviews',requestOptions) 
            .then(response => response.json())
            .then(data => setReviews(data)); 
      }, [reviews,requestOptions]);

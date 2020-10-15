@@ -16,7 +16,7 @@ const AddAdmin = () => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(admin) 
         };
-        fetch('http://localhost:5000/addAdmin', requestOptions)// fetch req to add events
+        fetch('https://polar-headland-31811.herokuapp.com/addAdmin', requestOptions)// fetch req to add events
 
     };
     return (

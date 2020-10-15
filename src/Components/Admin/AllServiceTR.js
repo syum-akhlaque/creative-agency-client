@@ -15,15 +15,12 @@ const AllServiceCards = (props) => {
                 <td>{serviceName}</td>
                 <td>{projectDetails}</td>
                 <td className="form-group select">
-                     
-                       
-                        <select onChange={handleOptionValue} className="form-control select" id="sel1">
-                            <option className='text-danger' selected>{status}</option>
-                            <option className='text-danger'>Pending</option>
-                            <option className='text-success'>Done</option>
-                            <option className='text-warning'>On Going</option>            
-                        </select>
-                    
+                    <select onChange={handleOptionValue} className="form-control select" id="sel1">
+                        <option className='text-danger' selected>{status}</option>
+                        <option className='text-danger'>Pending</option>
+                        <option className='text-success'>Done</option>
+                        <option className='text-warning'>On Going</option>            
+                    </select>
                 </td>
                 
             </tr>

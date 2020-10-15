@@ -21,7 +21,7 @@ const AllService = () => {
         }
       }
       useEffect(() => { //retrive all order from mongodb
-        fetch('http://localhost:5000/allCustomerServices',requestOptions) 
+        fetch('https://polar-headland-31811.herokuapp.com/allCustomerServices',requestOptions) 
            .then(response => response.json())
            .then(data => setAllServiceLists(data)); 
      }, [loggedInUser.email,requestOptions]);

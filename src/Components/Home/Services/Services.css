@@ -9,4 +9,5 @@
     border-radius: 10px;
     transform: scale(1.03);
     filter: brightness(130%);
+    cursor: pointer;
 }

@@ -21,7 +21,7 @@ const Review = () => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(review) 
         };
-        fetch('http://localhost:5000/addReviews', requestOptions)//--------------- fetch req to add Reviews
+        fetch('https://polar-headland-31811.herokuapp.com/addReviews', requestOptions)//--------------- fetch req to add Reviews
         .then(res => res.json())
         .then( data => {
             alert("Your file is being uploaded");

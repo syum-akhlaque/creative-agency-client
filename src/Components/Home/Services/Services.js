@@ -7,7 +7,7 @@ const Services = () => {
     const [services ,setServices] = useState([]);
 
     useEffect(() => {
-      fetch('http://localhost:5000/services') 
+      fetch('https://polar-headland-31811.herokuapp.com/services') 
           .then(response => response.json())
           .then(data => setServices(data)); //state a data save kora hocche
     }, [services]);
