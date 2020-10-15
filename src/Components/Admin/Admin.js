@@ -16,7 +16,7 @@ const Admin = () => {
         </div>
 
         {/* ------------------------------------------All Servic List --------------------------------------------- */}
-        <div id='allService'className = 'col-md-9' style={{background:'#E5E5E5' }}>
+        <div id='allService'className = 'col-md-10' style={{background:'#E5E5E5' }}>
             <AllService ></AllService>
         </div>
 

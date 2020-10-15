@@ -17,7 +17,7 @@ const Services = () => {
             <h2 className ='text-center my-5'>Provide awesome <span className = 'text-success'>services</span> </h2>
             <div className="row">
                 {
-                    services.map(service => <ServiceCards service={service}> </ServiceCards>)
+                    services.map(service => <ServiceCards service={service} key={service._id}> </ServiceCards>)
                 }
             </div>
         </div>

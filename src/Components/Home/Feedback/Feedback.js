@@ -24,7 +24,7 @@ const Feedback = () => {
             <h2 className ='text-center my-4 pb-5'>Clients <span className = 'text-success'>Feedback</span> </h2>
             <div className="row ">
                 {
-                    reviews.map(feedbacks => <FeedbackCards feedbacks={feedbacks}> </FeedbackCards>).reverse()
+                    reviews.map(feedbacks => <FeedbackCards feedbacks={feedbacks}  key={feedbacks._id}> </FeedbackCards>).reverse()
                 }
             </div>
         </div>

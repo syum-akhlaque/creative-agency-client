@@ -5,12 +5,11 @@ import { useForm } from "react-hook-form";
 
 const Review = () => {
     const [loggedInUser] = useContext(userContext);
-    console.log(loggedInUser.photoURL)
-    console.log(loggedInUser.email)
+    
     const { register, handleSubmit, errors } = useForm();
+
     const onSubmit = data => { 
-       
-        const review = { //object that will be push in database
+        const review = { //-------------object that will be push in database
             name    :  data.name,
             designation : data.designation,
             email   : loggedInUser.email ,
@@ -22,13 +21,11 @@ const Review = () => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(review) 
         };
-        fetch('http://localhost:5000/addReviews', requestOptions)// fetch req to add events
+        fetch('http://localhost:5000/addReviews', requestOptions)//--------------- fetch req to add Reviews
         .then(res => res.json())
         .then( data => {
             alert("Your file is being uploaded");
-        })
-        
-        // dispaly block service list hare or redirect something or send a alert
+        })  
     };
 
     return (
@@ -50,7 +47,6 @@ const Review = () => {
                     {errors.message && <span className='error'>*Required, Please write your messege</span>}
                 </div>
 
-                
                 <button className="btn text-white bg-darkBlue px-5" type='submit' >Send</button>
             </form>
     </div>

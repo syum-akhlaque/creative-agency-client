@@ -6,7 +6,14 @@ import AllServiceTR from './AllServiceTR';
 const AllService = () => {
     const [AllServiceLists ,setAllServiceLists] = useState([]);
     const [loggedInUser] = useContext(userContext);
-
+    const [option, setoption] = useState('cc')
+    const handleOptionValue = (e)=> {
+       const newValue= e.target.value;
+       setoption(newValue);
+       console.log(newValue)
+       
+    }
+   
     const requestOptions = {
         method: 'GET',
         headers: { 
@@ -26,13 +33,14 @@ const AllService = () => {
                         <th scope="col">Name</th>
                         <th scope="col">Email ID</th>
                         <th scope="col">Service</th>
-                        <th scope="col">Project Description</th>
+                        <th scope="col">Project Description</th> 
                         <th scope="col">Status</th>
+                        
                     </tr>
                 </thead>
                 <tbody>
                     {
-                        AllServiceLists.map( services => <AllServiceTR key= {services._id}  services={services} > </AllServiceTR>)
+                        AllServiceLists.map( services => <AllServiceTR key= {services._id}  services={services} handleOptionValue={handleOptionValue}> </AllServiceTR>)
                     }   
                 </tbody>
             </table>

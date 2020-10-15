@@ -12,6 +12,7 @@ import Navbar from './Components/Home/Navbar/Navbar';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import Dashboard from './Components/Dashboard/Dashboard';
 import Services from './Components/Services/Services';
+import Admin from './Components/Admin/Admin';
 export const userContext = createContext();
 
 function App() {
@@ -32,7 +33,7 @@ function App() {
           </Route>
           <Route exact path="/test">
             <Navbar></Navbar>
-            <Services></Services>
+            <Admin></Admin>
           </Route>
           <PrivateRoute exact path="/dashboard">
             <Navbar></Navbar>

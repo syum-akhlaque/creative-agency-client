@@ -26,6 +26,7 @@ const Order = (props) => {
         formData.append('serviceName', data.serviceName);
         formData.append('projectDetails', data.projectDetails);
         formData.append('email', data.email);
+        formData.append('status', 'pending');
 
         fetch('http://localhost:5000/addOrders', {
             method: 'POST',

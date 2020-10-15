@@ -23,7 +23,7 @@ const ServiceList = () => {
         <div  className ='py-5'>
             <div className="row">
                 {
-                    serviceLists.map(orders => <ServiceListCards orders={orders}> </ServiceListCards>)
+                    serviceLists.map(orders => <ServiceListCards orders={orders} key={orders._id}> </ServiceListCards>)
                 }
             </div>
         </div>

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import googleLogo from '../../images/logos/google.png';
+import googleLogo from '../../images/logos/googleLogo.png';
 import * as firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from './firebaseConfig';
