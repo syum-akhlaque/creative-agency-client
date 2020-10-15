@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import './Services.css'
-import serviceData from '../../../FakeDara/serviceData'
 import ServiceCards from './ServiceCards';
 
 const Services = () => {
