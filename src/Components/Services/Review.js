@@ -34,7 +34,7 @@ const Review = () => {
     };
 
     return (
-        <div className="col-md-5 p-5 ">
+        <div className="px-md-5 py-5 ">
             <form onSubmit={handleSubmit(onSubmit)}>
 
                 <div class="form-group">

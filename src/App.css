@@ -12,8 +12,9 @@
     margin-top: 10px;
   }
   .header-container {
-    height: 800px;
+    height: 800px !important;
 }
+
   .header-main div{
    padding-bottom: 40px;
   }

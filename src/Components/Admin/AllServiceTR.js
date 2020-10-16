@@ -1,14 +1,9 @@
 import React from 'react';
-import { useState } from 'react';
 import './Admin.css'
-
 
 const AllServiceCards = (props) => {
     const {name, serviceName, email, projectDetails,status ,_id} = props.services;
     const handleOptionValue = props.handleOptionValue;
-    const test = ()=>{
-        console.log('hello')
-    }
     
     return (
         <>

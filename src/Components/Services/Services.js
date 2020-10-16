@@ -21,17 +21,17 @@ const Services = () => {
             </div>
            
             {/* ------------------------------------------Order Form----------------------------------------------- */}
-            <div id='orderForm'className = 'col-md-7' style={{background:'#E5E5E5', paddingLeft:'60px'}}>
+            <div id='orderForm'className = 'col-md-5 p-2 pl-md-5' style={{background:'#E5E5E5' }}>
                 <Order serviceName={serviceName}></Order>
             </div>
 
             {/* ------------------------------------------Servic List --------------------------------------------- */}
-            <div id='serviceList'className = 'col-md-9' style={{background:'#E5E5E5', paddingLeft:'60px'}}>
+            <div id='serviceList'className = 'col-md-9 p-2 pl-md-5' style={{background:'#E5E5E5'}}>
                 <ServiceList serviceName={serviceName}></ServiceList>
             </div>
 
             {/* -----------------------------------------Review -------------------------------------------------- */}
-            <div id='clientReview'className = 'col-md-9' style={{background:'#E5E5E5', paddingLeft:'60px'}}>
+            <div id='clientReview'className = 'col-md-9 p-2 pl-md-5' style={{background:'#E5E5E5'}}>
                 <Review serviceName={serviceName}></Review>
             </div>
 

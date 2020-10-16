@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 const AddAdmin = () => {
     const { register, handleSubmit, errors } = useForm();
     const onSubmit = data => { 
-       
+        alert("Ya Hoo !! Success!")
         const admin = { //object that will be push in database
             adminEmail: data.adminEmail,
         }

@@ -49,9 +49,7 @@ table{
     border: 1px solid rgb(255, 222, 251);
     width: 100%;
 }
-.order-form input:focus{
-   
-}
+
 .error{
     color: red;
 }

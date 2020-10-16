@@ -49,6 +49,7 @@ const AddService = () => {
                 </div>
 
                 <div class="form-group">
+                    <label className='pl-1' htmlFor="file">Upload Image</label>
                     <input onChange={handleFileChange} type="file" name="file" id="" ref={register({ required: true })}/>
                    {errors.file && <span className='error'>file is required </span>}
                 </div>
