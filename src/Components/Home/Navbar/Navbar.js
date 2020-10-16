@@ -27,6 +27,7 @@ const Navbar1 = () => {
                         <Link to="/"><a className="nav-link mr-5">Our Portfolio</a></Link>
                         <Link to="/"><a className="nav-link mr-5">Our Team</a></Link>
                         <Link to="/dashboard"> <a className="nav-link mr-5 ">Dashboard</a></Link>
+                        <Link to="/login"> <button className='btn text-white bg-darkBlue px-5 mr-md-5 '>Login</button></Link>
                         </>
                    }
                    {
