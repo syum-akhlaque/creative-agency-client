@@ -32,15 +32,15 @@ const Order = (props) => {
             method: 'POST',
             body: formData
         })
-            .then(res => res.json())
-            .then(result => {
-                if(result){
-                    alert("Order Success!")
-                }
-            })
-            .catch(error => {
-                console.error(error)
-            })
+        .then(res => res.json())
+        .then(result => {
+            if(result){
+                alert(" Success....!")
+            }
+        })
+        .catch(error => {
+            console.error(error)
+        })
     }
     //--------------------------
  

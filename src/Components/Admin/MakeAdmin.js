@@ -15,16 +15,16 @@ const AddAdmin = () => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(admin) 
         };
-        fetch('https://polar-headland-31811.herokuapp.com/addAdmin', requestOptions)// fetch req to add events
-            .then(res => res.json())
-            .then(result => {
-                if(result){
-                    alert("A New Admin Added!")
-                }
-            })
-            .catch(error => {
-                console.error(error)
-            })
+        fetch('https://polar-headland-31811.herokuapp.com/addAdmin', requestOptions)
+        .then(res => res.json())
+        .then(result => {
+            if(result){
+                alert("Ya Hoo !! Success!")
+            }
+        })
+        .catch(error => {
+            console.error(error)
+        })
     };
     return (
         <div className="col-md-5 p-5 ">

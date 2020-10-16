@@ -21,11 +21,11 @@ const Review = () => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(review) 
         };
-        fetch('https://polar-headland-31811.herokuapp.com/addReviews', requestOptions)//--------------- fetch req to add Reviews
+        fetch('https://polar-headland-31811.herokuapp.com/addReviews', requestOptions)
         .then(res => res.json())
         .then(result => {
             if(result){
-                alert("Your Review Added Successfully!")
+                alert("Ya Hoo !! Success!")
             }
         })
         .catch(error => {
