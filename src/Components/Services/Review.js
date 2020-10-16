@@ -23,9 +23,14 @@ const Review = () => {
         };
         fetch('https://polar-headland-31811.herokuapp.com/addReviews', requestOptions)//--------------- fetch req to add Reviews
         .then(res => res.json())
-        .then( data => {
-            alert("Your file is being uploaded");
-        })  
+        .then(result => {
+            if(result){
+                alert("Your Review Added Successfully!")
+            }
+        })
+        .catch(error => {
+            console.error(error)
+        })
     };
 
     return (

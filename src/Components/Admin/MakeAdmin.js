@@ -7,7 +7,6 @@ const AddAdmin = () => {
     const { register, handleSubmit, errors } = useForm();
     const onSubmit = data => { 
        
-        alert("Ya Hoo !! A New Admin Added!")
         const admin = { //object that will be push in database
             adminEmail: data.adminEmail,
         }
@@ -17,7 +16,15 @@ const AddAdmin = () => {
             body: JSON.stringify(admin) 
         };
         fetch('https://polar-headland-31811.herokuapp.com/addAdmin', requestOptions)// fetch req to add events
-
+            .then(res => res.json())
+            .then(result => {
+                if(result){
+                    alert("A New Admin Added!")
+                }
+            })
+            .catch(error => {
+                console.error(error)
+            })
     };
     return (
         <div className="col-md-5 p-5 ">

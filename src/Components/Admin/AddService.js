@@ -1,12 +1,10 @@
-import React, { useContext, useState } from 'react';
-import { userContext } from '../../App';
+import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import './Admin.css'
 
 const AddService = () => {
 
     const [file, setFile] = useState({})
-    const [loggedInUser] = useContext(userContext);
     const { register, handleSubmit, errors } = useForm();
 
     const handleFileChange = (e) => {
@@ -17,22 +15,23 @@ const AddService = () => {
     const onSubmit = (data) => {
 
         const formData = new FormData()
-
         formData.append('file', file);
         formData.append('title', data.title);
         formData.append('description', data.description);
 
-        fetch('https:/polar-headland-31811.herokuapp.com/addServices', {
+        fetch('https://polar-headland-31811.herokuapp.com/addServices', {
             method: 'POST',
             body: formData
         })
-            .then(response => response.json())
-            .then(result => {
-                console.log(result)
-            })
-            .catch(error => {
-                console.error(error)
-            })
+        .then(res => res.json())
+        .then(result => {
+            if(result){
+                alert("Ya Hoo !! Success!")
+            }
+        })
+        .catch(error => {
+            console.error(error)
+        })
     }
    
     return (
@@ -50,7 +49,7 @@ const AddService = () => {
                 </div>
 
                 <div class="form-group">
-                <input onChange={handleFileChange} type="file" name="file" id="" ref={register({ required: true })}/>
+                    <input onChange={handleFileChange} type="file" name="file" id="" ref={register({ required: true })}/>
                    {errors.file && <span className='error'>file is required </span>}
                 </div>
 

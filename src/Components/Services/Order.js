@@ -9,7 +9,7 @@ const Order = (props) => {
     const [file, setFile] = useState({})
    
 
-    const [loggedInUser, setLoggedInUser] = useContext(userContext);
+    const [loggedInUser] = useContext(userContext);
     const { register, handleSubmit, errors } = useForm();
     // ------------------------
     const handleFileChange = (e) => {
@@ -32,9 +32,11 @@ const Order = (props) => {
             method: 'POST',
             body: formData
         })
-            .then(response => response.json())
+            .then(res => res.json())
             .then(result => {
-                console.log(result)
+                if(result){
+                    alert("Order Success!")
+                }
             })
             .catch(error => {
                 console.error(error)
