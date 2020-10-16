@@ -4,12 +4,18 @@ import ServiceCards from './ServiceCards';
 
 const Services = () => {
     const [services ,setServices] = useState([]);
+    const requestOptions = {
+        method: 'GET',
+        headers: { 
+            'Content-Type': 'application/json',
+        }
+      }
 
     useEffect(() => {
-      fetch('https://polar-headland-31811.herokuapp.com/services') 
+      fetch('https://polar-headland-31811.herokuapp.com/services',requestOptions) 
           .then(response => response.json())
-          .then(data => setServices(data)); //state a data save kora hocche
-    }, [services]);
+          .then(data => setServices(data)); 
+    }, [services,requestOptions]);
 
     return (
         <div  className ='my-5 pt-4 w-75 mx-auto '>

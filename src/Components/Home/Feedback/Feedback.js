@@ -11,7 +11,6 @@ const Feedback = () => {
         method: 'GET',
         headers: { 
             'Content-Type': 'application/json',
-            //authorization: `Bearer ${sessionStorage.getItem('token')}`
         }
       }
     useEffect(() => { //retrive all order from mongodb
