@@ -5,29 +5,42 @@ import AllServiceTR from './AllServiceTR';
 
 const AllService = () => {
     const [AllServiceLists ,setAllServiceLists] = useState([]);
+    
     const [loggedInUser] = useContext(userContext);
-    const [option, setoption] = useState('cc')
-    const handleOptionValue = (e)=> {
-       const newValue= e.target.value;
-       setoption(newValue);
-       console.log(newValue)
-       
+
+    //---------------update request---------------------
+    const handleOptionValue = (_id, event)=> {
+               
+        const updatableValues = {
+            id : _id,
+            status : event.target.value
+            
+        }
+        console.log(updatableValues.id);
+        const updateOptions = {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(updatableValues)
+          }
+        fetch('https://polar-headland-31811.herokuapp.com/update',updateOptions) 
+        
     }
-   
+
+  
+//---------------retrive all service order , shown in table --------------
     const requestOptions = {
         method: 'GET',
-        headers: { 
-            'Content-Type': 'application/json',
-        }
+        headers: { 'Content-Type': 'application/json', }
       }
-      useEffect(() => { //retrive all order from mongodb
+      useEffect(() => { 
         fetch('https://polar-headland-31811.herokuapp.com/allCustomerServices',requestOptions) 
            .then(response => response.json())
            .then(data => setAllServiceLists(data)); 
      }, [loggedInUser.email,requestOptions]);
+
     return (
         <div className = 'right-side '>
-            <table className="table table-striped " id = 'event-list'> {/* List of all events */}
+            <table className="table table-striped " id = 'event-list'> {/*------------------- List of all orders of customer */}
                 <thead>
                     <tr>
                         <th scope="col">Name</th>

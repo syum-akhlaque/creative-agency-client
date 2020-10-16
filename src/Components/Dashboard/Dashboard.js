@@ -14,7 +14,7 @@ const Dashboard = () => {
         }
       }
       useEffect(() => { 
-        fetch('http://localhost:5000/isAdmin?email='+loggedInUser.email,requestOptions) 
+        fetch('https://polar-headland-31811.herokuapp.com/isAdmin?email='+loggedInUser.email,requestOptions) 
            .then(response => response.json())
            .then(data => setIsAdmin(data)); 
      }, [loggedInUser.email,requestOptions,isAdmin]);
